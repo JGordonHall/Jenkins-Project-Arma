@@ -23,7 +23,7 @@ resource "aws_s3_object" "object-jpg" {
 resource "aws_s3_object" "Jenkins-Proof" {
   for_each = toset([
 
-    "webhook-proof.jpg", "jenkins-proof-2.jpg", "jenkins-proof.jpg"
+    "Jenkins-Proof-1.jpg", "Jenkins-Proof-2.jpg", "Jenkins-Proof-3.jpg" ,"Jenkins-Proof-4.jpg" ,"Webhook-proof-1.jpg" ,"Webhook-proof-2.jpg"
   ])
   bucket       = aws_s3_bucket.frontend.id
   key          = "Jenkins-Proof/${each.value}"
