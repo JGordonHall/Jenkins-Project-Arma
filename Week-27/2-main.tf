@@ -20,8 +20,11 @@ resource "aws_s3_object" "object-jpg" {
   source = "${path.module}/Armageddon-Proof/arma-proof.jpg"
 }
 
-#resource "aws_s3_object" "object-jpg" {
-#  bucket = aws_s3_bucket.frontend.id
-#  key    = "Jenkins-Proof/Jenkins-Proof.jpg"
-#  source = "${path.module}/Jenkins-Proof/Jenkins-Proof.jpg"
-#}
+resource "aws_s3_object" "Jenkins_Proof" {
+  for_each = fileset("${path.module}/Jenkins_proof", "**")
+
+  bucket       = aws_s3_bucket.Jenkins_Bucket.id
+  key          = "Jenkins_Proof/${each.value}"
+  source       = "${path.module}/Jenkins_proof/${each.value}"
+  content_type = "image/png"
+}
