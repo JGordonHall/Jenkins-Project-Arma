@@ -28,6 +28,6 @@ resource "aws_s3_object" "Jenkins_Proof" {
   bucket       = aws_s3_bucket.frontend.id
   key          = "Jenkins_Proof/${each.value}"
   source       = "${path.module}/Jenkins_Proof/${each.value}"
-  content_type = "image/png"
+  content_type = "image/jpg"
 }
 
