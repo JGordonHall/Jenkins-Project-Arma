@@ -23,7 +23,7 @@ resource "aws_s3_object" "object-jpg" {
 resource "aws_s3_object" "Jenkins_Proof" {
   for_each = fileset("${path.module}/Jenkins_proof", "**")
 
-  bucket       = aws_s3_bucket.jenkins-bucket-20260329034857089900000001.id
+  bucket       = aws_s3_bucket.frontend.id
   key          = "Jenkins_Proof/${each.value}"
   source       = "${path.module}/Jenkins_proof/${each.value}"
   content_type = "image/png"
