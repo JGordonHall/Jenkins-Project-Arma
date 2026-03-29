@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "frontend" {
 
 
   tags = {
-    Name = "jenkins-tf-state-z1"
+    Name = "jenkins-bucket-20260329034857089900000001"
   }
 }
 
