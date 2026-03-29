@@ -17,7 +17,7 @@ resource "aws_s3_object" "object-txt" {
 resource "aws_s3_object" "object-jpg" {
 
 
-for_each = toset([
+  for_each = toset([
 
     "webhook-proof.jpg", "jenkins-proof-2.jpg", "jenkins-proof.jpg"
   ])
